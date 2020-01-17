@@ -1,0 +1,12 @@
+# Script pour démarrage auto du PI sur une page web en mode kiosk et en plein écran
+# A metre en lieux et place du fichier /etc/xdg/lxsession/LXDE-pi/autostart
+
+
+@xset s off
+@xset -dpms
+@xset s noblank
+@lxpanel --profile LXDE-pi
+@pcmanfm --desktop --profile LXDE-pi
+@xscreensaver -no-splash
+@point-rpi
+@/usr/lib/chromium-browser/chromium-browser --start-fullscreen --kiosk --noerrdialogs --disable-translate --no-first-run --fast --fast-start --disable-infobars --disable-features=TranslateUI http://www.google.fr
